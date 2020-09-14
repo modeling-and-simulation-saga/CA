@@ -34,9 +34,9 @@ public class Flow extends Observable {
         initializeAndRelax(p,tmax);//緩和
         double flow = 0.;
         //流量を返す
-        int num = ca.getNumDifference() / 2;//移動した車両数
-        int numSite = ca.getN();//サイト数
-        flow = ((double) num) / numSite;
+
+
+
         return flow;
     }
 
