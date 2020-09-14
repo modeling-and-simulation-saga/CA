@@ -34,9 +34,9 @@ public class Speed extends Observable {
         initializeAndRelax(p, tmax);
         double v = 0.;//平均速度
         //平均速度を返す
-        int numCar = ca.getNumR();
-        int num =  ca.getNumDifference() / 2;
-        v = ((double) num) / numCar;
+
+
+
         return v;
     }
 
