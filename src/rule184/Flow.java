@@ -26,22 +26,18 @@ public class Flow extends Observable {
      * 流量を求める
      *
      * @param p 車両密度
-     * @param tmax 平均ととる時間
-     * @return 平均速度
+     * @param tmax 観測までの緩和時間
+     * @return 流量」
      */
     @Override
     public double calcValue(double p, int tmax) {
-        initializeAndRelax(p,tmax);
-        int num = 0;//移動した車両数
-        for (int t = 0; t < tmax; t++) {
-            ca.update();
-            //移動した車両の数を加算
-           
-           
-        }
-        //流量を返す。以下は必ず書き直す
-
-        return 1.;
+        initializeAndRelax(p,tmax);//緩和
+        double flow = 0.;
+        //流量を返す
+        int num = ca.getNumDifference() / 2;//移動した車両数
+        int numSite = ca.getN();//サイト数
+        flow = ((double) num) / numSite;
+        return flow;
     }
 
     /**

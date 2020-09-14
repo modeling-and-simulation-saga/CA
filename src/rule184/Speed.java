@@ -26,22 +26,18 @@ public class Speed extends Observable {
      * 速度を求める
      *
      * @param p 車両密度
-     * @param tmax 平均ととる時間
+     * @param tmax 観測までの緩和時間
      * @return 平均速度
      */
     @Override
     public double calcValue(double p, int tmax) {
         initializeAndRelax(p, tmax);
+        double v = 0.;//平均速度
+        //平均速度を返す
         int numCar = ca.getNumR();
-        int num = 0;//移動した車両数
-        for (int t = 0; t < tmax; t++) {
-            ca.update();
-            //移動した車両の数を加算
-           
-           
-        }
-        //平均速度を返す。以下は必ず変更すること
-        return 1.;
+        int num =  ca.getNumDifference() / 2;
+        v = ((double) num) / numCar;
+        return v;
     }
 
     /**
