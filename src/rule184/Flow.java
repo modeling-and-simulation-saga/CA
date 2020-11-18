@@ -46,7 +46,7 @@ public class Flow extends Observable {
      */
     public static void main(String[] args) throws IOException {
         int n = 100;
-        double dp = 0.01;
+        double dp = 0.02;
         int tmax=100*n;
         Flow sys = new Flow(n);
         List<Point2D.Double> points = sys.calcValues(dp,tmax);
