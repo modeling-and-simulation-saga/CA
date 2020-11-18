@@ -44,7 +44,7 @@ abstract public class Observable {
     public List<Point2D.Double> calcValues(double dp, int tmax) {
         List<Point2D.Double> pList = Utils.createList();
         int k = (int) (1. / dp);
-        pList.add(new Point2D.Double(0., 0.));
+//        pList.add(new Point2D.Double(0., 0.));
         for (int i = 1; i < k; i++) {
             double p = i * dp;//密度
             double value = calcValue(p, tmax);//平均量
